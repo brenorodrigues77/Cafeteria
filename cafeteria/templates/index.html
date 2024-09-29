@@ -1,13 +1,34 @@
-<!DOCTYPE html>
+{%extends "base.html" %}
+
+{%block content%}
+
+{% load static %}
+<link rel="stylesheet" href="{% static "index.css" %}">
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-    {% block content %}
-        <body>
-            <h1>opção de cafe: {{coffe.title}}</h1>
-        </body>
-    {% endblock content %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cafeteria</title>
+    </head>
+
+<form action="{%url 'inicio_list'%}">
+    <input type="text" name="search" placeholder="opções de café">
+    <button type="submit">Buscar</button>
+</form>
+
+    <div class="coffe-grid">
+        {%if coffe %}
+            {%for coffes in coffe%}
+                <div class="coffe-card">
+                    <img src="{{ coffes.photo.url }}" alt="{{coffes.title}} - {{coffes.value}}">
+                    <h2>{{coffes.title}}</h2>
+                    <p>{{coffes.value}}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-results">Nenhum opção encontrada</p>
+        {% endif %}
+    </div>
 </html>
+{% endblock %}

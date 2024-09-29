@@ -1,0 +1,62 @@
+body {
+    font-family: 'open Sans', sans-serif;
+    background-color: white;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: saddlebrown;
+    text-align: center;
+}
+
+nav {
+    background-color: saddlebrown;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 20px;
+    padding: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+nav ul li a :hover {
+    background-color: dimgrey;
+}
+
+nav ul li :active a {
+    background-color: #666;
+}
+
+nav ul li :active a:hover {
+    background-color: #999;
+}
+
+footer {
+    background-color: saddlebrown;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    color: white;
+}
